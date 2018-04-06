@@ -1,5 +1,6 @@
 package com.smartfood.team1.smartfood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String LOGIN_MESSAGE = "com.smartfood.team1.LOGIN_MESSAGE";
+    public static final String LOGIN_EXISTING = "EXISTING";
+    public static final String LOGIN_NEW = "NEW";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +53,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onButtonPressed(View view) {
+        int id = view.getId();
+
+        // Prepare login activity
+        Intent intent = new Intent(this, LoginActivity.class);
+
+        // Get message to send to login activity
+        String message = "NONE";
+        if (id == R.id.button_signin) {
+            // Signal existing user
+            message = LOGIN_EXISTING;
+        } else if (id == R.id.button_signup) {
+            // Signal new user
+            message = LOGIN_NEW;
+        }
+
+        // Start login activity
+        intent.putExtra(LOGIN_MESSAGE, message);
+        startActivity(intent);
     }
 }
