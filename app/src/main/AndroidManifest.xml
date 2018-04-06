@@ -28,7 +28,17 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".AccountTypeActivity" />
-        <activity android:name=".CreateVolunteerActivity"></activity>
+        <activity android:name=".CreateVolunteerActivity" />
+        <activity android:name=".VolunteerDutiesActivity" />
+        <activity
+            android:name=".HubActivity"
+            android:label="@string/title_activity_hub"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.smartfood.team1.smartfood.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
