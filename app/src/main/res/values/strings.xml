@@ -8,6 +8,11 @@
     <string name="label_signup">Create Account</string>
     <string name="new_user">New user?</string>
 
+    <!-- Strings related to account type activity -->
+    <string name="label_industry">Food Industry</string>
+    <string name="label_bank">Food Bank</string>
+    <string name="label_volunteer">Volunteer</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
