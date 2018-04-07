@@ -51,7 +51,7 @@
                 android:value="com.smartfood.team1.smartfood.MainActivity" />
         </activity>
         <activity android:name=".MapActivity" />
-
+		<activity android:name=".SchedulePickupActivity" />
     </application>
 
 </manifest>

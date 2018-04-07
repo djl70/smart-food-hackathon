@@ -129,12 +129,13 @@ public class HubActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent(this, SchedulePickupActivity.class));
         } else if (id == R.id.nav_slideshow) {
-
+			Intent intent= new Intent(HubActivity.this, MapActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        //} else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        //} else if (id == R.id.nav_send) {
 
         }
 
