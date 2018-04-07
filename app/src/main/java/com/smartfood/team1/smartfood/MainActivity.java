@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-    pi
+
     public static final String LOGIN_MESSAGE = "com.smartfood.team1.LOGIN_MESSAGE";
     public static final String LOGIN_EXISTING = "EXISTING";
     public static final String LOGIN_NEW = "NEW";
