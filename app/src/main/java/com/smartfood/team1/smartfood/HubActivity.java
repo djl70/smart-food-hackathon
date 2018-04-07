@@ -1,8 +1,15 @@
 package com.smartfood.team1.smartfood;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,14 +30,51 @@ public class HubActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        TabLayout.OnTabSelectedListener listener = new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                String name = tab.getText().toString();
+
+                if (name.contentEquals("Supply")) {
+                    // Change content to supply fragment
+                    Fragment f = new BlankFragment();//DonationFragment();
+                    FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+                    t.replace(R.id.hub_content, f);
+                    t.commit();
+                } else if (name.contentEquals("Drive")) {
+                    Fragment f = new BlankFragment2();//PlusOneFragment();
+                    FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+                    t.replace(R.id.hub_content, f);
+                    t.commit();
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        };
+        tabLayout.addOnTabSelectedListener(listener);
+
+        Fragment f = new BlankFragment();
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+        t.add(R.id.hub_content, f);
+        t.commit();
+
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -83,7 +127,7 @@ public class HubActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(this, SchedulePickupActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
