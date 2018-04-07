@@ -8,6 +8,11 @@
     <string name="label_signup">Create Account</string>
     <string name="new_user">New user?</string>
 
+    <!-- Strings related to account type activity -->
+    <string name="label_industry">Food Industry</string>
+    <string name="label_bank">Food Bank</string>
+    <string name="label_volunteer">Volunteer</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
@@ -20,7 +25,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-	
-	<!-- Strings related to Google -->
-	<string name="google_maps_API_Key">AIzaSyCfDBR7FJiLVwkLUJQQpXgBn2ZC_Wn-LPY</string>
+    <string name="title_activity_hub">HubActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <!-- Google maps api key -->
+    <string name="google_maps_API_key">AIzaSyCfDBR7FJiLVwkLUJQQpXgBn2ZC_Wn-LPY</string>
 </resources>
