@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.button_signup) {
             // Signal new user
             message = LOGIN_NEW;
+
+            startActivity(new Intent(this, AccountTypeActivity.class));
+            return;
         }
 
         // Start login activity
